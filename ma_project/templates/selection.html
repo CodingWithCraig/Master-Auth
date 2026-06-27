@@ -1,3 +1,6 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'index.css' %}">
+
 <style>
     :root {
         display: flex;
@@ -35,30 +38,14 @@
         color: rgb(0, 0, 0);
 
     }
-    .backBtn {
-        background-color: rgba(0, 0, 0, 0.863);
-        color: white;
-        position: absolute;
-        top: 10px;
-        left: 20px;
-        width: 70px;
-        text-align: center;
-        padding: 6px;
-        border-radius: 10px;
-        text-decoration: none;
-        transition: all 0.3s ease-in-out;
-    }
-    .backBtn:hover {
-        background-color: rgb(220, 239, 255);
-        color: black;
-    }
+
 </style>
 
 <a href="/" class="backBtn">Back</a>
 
 <h1>Which action, would you love to experiment?</h1>
 <ul>
-    <li><a href="">User sign-up</a></li>
+    <li><a href="signup">User sign-up</a></li>
     <li><a href="">User sign-in</a></li>
     <li><a href="">User sign-out</a></li>
 </ul>

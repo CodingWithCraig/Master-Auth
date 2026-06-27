@@ -1,0 +1,62 @@
+{% load static %}
+<link rel="stylesheet" href="{% static 'index.css' %}">
+
+<style>
+    :root {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        width: 100%;
+        height: 100vh;
+    }
+    h1, h3 {
+        text-align: center;
+    }
+    h3 {
+        color: red;
+        font-weight: normal;
+    }
+    form {
+        background-color: black;
+        width: fit-content;
+        margin: 10px auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    form input {
+        padding: 5px;
+        color: black;
+    }
+    form input[type='submit'] {
+        background-color: aquamarine;
+        border-radius: 5px;
+        border: none;
+    }
+    form input[type='submit']:hover {
+        background-color: aliceblue;
+    }
+
+</style>
+
+<a href="selection" class="backBtn">Back</a>
+
+
+<h1>
+    Create account
+</h1>
+
+{% for message in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
+
+<form method="POST" action="signup">
+    {% csrf_token %}
+    <input type="username" name="username" placeholder="Please enter your username..."/> <br/>
+    <input type="email" name="email" placeholder="Please Enter your email..."/> <br>
+    <input type="password" name="password" placeholder="Please enter your password..."/> <br/>
+    <input type="password2" name="password2" placeholder="Re-enter your password..."/> <br/>
+    <input type="submit" value="Create Account"/>
+
+</form>
