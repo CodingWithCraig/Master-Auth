@@ -2,50 +2,66 @@
 <link rel="stylesheet" href="{% static 'index.css' %}">
 
 <style>
-    :root {
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        width: 100%;
-        height: 100vh;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5f7fa;
     }
+
     h1 {
+        margin-bottom: 30px;
         text-align: center;
     }
+
     ul {
         list-style: none;
-        display: block;
-        width: fit-content;
-        margin: auto;
+        display: flex;
+        flex-direction: column;
+        gap: 18px;
     }
-    ul li {
-        margin: 15px;
-        width: 120px;
-        border: 1px solid rgba(0, 139, 139, 0.589);
-        padding: 10px 5px;
-        border-radius: 5px;
-        text-align: center;
-        background-color: rgb(126, 166, 168);
 
+    li {
+        width: 260px;
     }
-    ul li:hover {
-        box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.986);
-    }
-    ul li  a {
-        /* margin: 5px; */
+
+    li a {
+        display: block;
+        width: 100%;
+        padding: 14px;
+        text-align: center;
         text-decoration: none;
         font-weight: bold;
-        color: rgb(0, 0, 0);
-
+        color: #222;
+        background: rgb(126, 166, 168);
+        border: 1px solid rgba(0, 139, 139, 0.6);
+        border-radius: 8px;
+        transition: all .2s ease;
     }
 
+    li a:hover {
+        background: darkcyan;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 5px 12px rgba(0,0,0,.2);
+    }
 </style>
 
 <a href="/" class="backBtn">Back</a>
 
-<h1>Which action, would you love to experiment?</h1>
+<h1>Which action would you like to experiment with?</h1>
+
 <ul>
-    <li><a href="signup">User sign-up</a></li>
-    <li><a href="">User sign-in</a></li>
-    <li><a href="">User sign-out</a></li>
+    <li><a href="signup">User Sign Up</a></li>
+    <li><a href="">User Sign In</a></li>
+    <li><a href="">User Sign Out</a></li>
 </ul>
