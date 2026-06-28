@@ -56,4 +56,20 @@ def signup(request):
             return redirect('signup')
     return render(request, 'signup.html')
             
+
+def signin(request):
+    if request.method == "POST":
+        username = request.POST.get("username")
+        password = request.POST.get("password")
+
+        user = auth.authenticate(username=username, password=password)
+
+        if user is not None:
+            auth.login(request, user)
+            messages.success(request, "Successfully logged in")
+            return redirect("signin")  # or another page
+        else:
+            messages.error(request, "Invalid email or password")
+
+    return render(request, "signin.html")
             

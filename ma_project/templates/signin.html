@@ -1,0 +1,64 @@
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5f7fa;
+    }
+    h1 {
+        margin: 10px;
+    }
+    .note {
+        opacity: 0.8;
+        width: 70%;
+        text-align: center;
+    }
+    form {
+        background-color: black;
+        width: fit-content;
+        margin: 10px auto;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 2px;
+    }
+    form input {
+        padding: 5px;
+        color: black;
+    }
+    form input[type='submit'] {
+        background-color: aquamarine;
+        border-radius: 5px;
+        border: none;
+    }
+    form input[type='submit']:hover {
+        background-color: aliceblue;
+    }
+</style>
+
+<h1>LOGIN</h1>
+
+{% for message in messages %}
+<h3>{{message}}</h3>
+{% endfor %}
+
+<p class="note"><b>Note:</b> Before testing out action make sure you have already added user to your django DB
+    or atleast have created a successfull user in the signup action that you will use.
+</p>
+
+<form method="POST" action="signin">
+    {% csrf_token %}
+
+    <input type="username" name="username" placeholder="Enter username..."/>
+    <input type="password" name="password" placeholder="Enter password...">
+    <input type="submit" value="Login" />
+</form>
